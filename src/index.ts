@@ -37,6 +37,7 @@ class ElementPrinter {
 
 const rewriter = new HTMLRewriter()
   .on("script", new ElementRemover())
+  .on(`link[rel="search"]`, new ElementRemover())
   .on("footer", new ElementRemover())
   .on("a.btn.ml-15", new ElementRemover())
   .on("#nav-logo", new ElementHider());
